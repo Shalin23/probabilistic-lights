@@ -80,5 +80,3 @@ def TuringMachine(input):
                 j += 1
             print(word + str(sum))
             
-
-TuringMachine("00a000000000")
