@@ -3,23 +3,17 @@ def Transitions(current_state, tape_alpha):
         if tape_alpha == "0":
             return (1, "X", "R")
         elif tape_alpha == "a":
-            return (4, "b", "R")
+            return (3, "b", "R")
 
     elif current_state == 1:
-        if tape_alpha == "0":
-            return (1, "0", "R")
-        elif tape_alpha == "a":
-            return (2, "a", "R")
+        if tape_alpha == "0" or tape_alpha == "a":
+            return (1, tape_alpha, "R")
+        elif tape_alpha == "b":
+            return (2, "0", "L")
 
     elif current_state == 2:
-        if tape_alpha == "0":
-            return (2, "0", "R")
-        elif tape_alpha == "b":
-            return (3, "0", "L")
-
-    elif current_state == 3:
         if tape_alpha == "0" or tape_alpha == "a":
-            return (3, tape_alpha, "L")  # return 0 or a
+            return (2, tape_alpha, "L")  # return 0 or a
         elif tape_alpha == "X":
             return (0, "X", "R")
 
@@ -39,7 +33,7 @@ def TuringMachine(input):
         tape.append("b")
     tape = tape[:50] + input_str + tape[50:]
     # print(tape)
-# TuringMachine("111+11")
+
     i = 50
     current_state = 0
     direction = ""
@@ -49,7 +43,7 @@ def TuringMachine(input):
     else:
         current_state, tape[i], direction = Transitions(
             current_state, tape[i])  # x0 a 000 0
-        while current_state != 4:
+        while current_state != 3:
 
             if direction == "L":
                 i = i-1
@@ -62,7 +56,7 @@ def TuringMachine(input):
                 # print("lllll:", Transitions(current_state,tape[i]))
                 current_state, tape[i], direction = Transitions(
                     current_state, tape[i])
-        if current_state == 4:
+        if current_state == 3:
             first_zero = tape.index("0")
             sum = 0
 
@@ -72,4 +66,4 @@ def TuringMachine(input):
             print(sum)
 
 
-# TuringMachine("000a0000")
+TuringMachine("000a0000")
