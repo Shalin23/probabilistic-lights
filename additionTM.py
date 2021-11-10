@@ -14,11 +14,11 @@ def turing_machine(input):
     i = 50
     current_state = 0
     direction = ""
-    # current_state, tape[i], direction = transitions.Transitions(current_state,tape[i])  #x0 a 000 0
-    if transitions.Transitions(current_state, tape[i]) == -1:
+    # current_state, tape[i], direction = transitions.add(current_state,tape[i])  #x0 a 000 0
+    if transitions.add(current_state, tape[i]) == -1:
         print("not recognized ", i)
     else:
-        current_state, tape[i], direction = transitions.Transitions(
+        current_state, tape[i], direction = transitions.add(
             current_state, tape[i])  # x0 a 000 0
         while current_state != 4:
 
@@ -26,12 +26,12 @@ def turing_machine(input):
                 i = i-1
             elif direction == "R":
                 i = i+1  # 53  54  55
-            if transitions.Transitions(current_state, tape[i]) == None:
+            if transitions.add(current_state, tape[i]) == None:
                 print("not recognized ", i)
                 break
             else:
-                # print("lllll:", transitions.Transitions(current_state,tape[i]))
-                current_state, tape[i], direction = transitions.Transitions(
+                # print("lllll:", transitions.add(current_state,tape[i]))
+                current_state, tape[i], direction = transitions.add(
                     current_state, tape[i])
         if current_state == 4:
             first_zero = tape.index("0")
