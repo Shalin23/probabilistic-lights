@@ -8,9 +8,11 @@ def main():
     print()
 
     print("Applying 3 + 4 using a Turing Machine")
-    additionTM.turing_machine("000a0000")
+    additionTM.turing_machine("111+1111")
     print("Applying 4 + 4 using a Turing Machine")
-    additionTM.turing_machine("0000a0000")
+    additionTM.turing_machine("1111+1111")
+    print("Applying 4 + 5 using a Turing Machine")
+    additionTM.turing_machine("1111+1011")
     print()
 
     print("Applying 2 - 9 using a Turing Machine")
