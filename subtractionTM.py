@@ -1,14 +1,14 @@
 import transitions
 import inputParser
 
-def TuringMachine(input):
+def turing_machine(input):
 
     tape = []
-    input_str = inputParser.parser(input)
+    input_lst = inputParser.parser(input)
 
     for i in range(100):
         tape.append("b")
-    tape = tape[:50] + input_str + tape[50:]
+    tape = tape[:50] + input_lst + tape[50:]
 
     i = 50
     current_state = 0

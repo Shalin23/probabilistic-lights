@@ -56,3 +56,54 @@ def subtract(current_state, tape_alpha):
     elif current_state == 5:
         if tape_alpha == "a":
             return (6, "-", "R")
+
+
+def multiply(current_state, head):
+    # Dictionary of states and their transitions
+    states_operations = {
+        "q0": {
+            "#": ("q0", "#", "R"),
+            "*": ("q9", "#", "R"),
+            "1": ("q1", "#", "R"),
+        },
+        "q1": {
+            "*": ("q2", "*", "R"),
+            "1": ("q1", "1", "R"),
+        },
+        "q2": {
+            "#": ("q7", "#", "L"),
+            "1": ("q3", "X", "R"),
+        },
+        "q3": {
+            "#": ("q4", "#", "R"),
+            "1": ("q3", "1", "R"),
+        },
+        "q4": {
+            "#": ("q5", "1", "L"),
+            "1": ("q4", "1", "R"),
+        },
+        "q5": {
+            "#": ("q6", "#", "L"),
+            "1": ("q5", "1", "L"),
+        },
+        "q6": {
+            "X": ("q2", "X", "R"),
+            "1": ("q6", "1", "L"),
+        },
+        "q7": {
+            "X": ("q7", "1", "L"),
+            "*": ("q8", "*", "L"),
+        },
+        "q8": {
+            "#": ("q0", "#", "R"),
+            "1": ("q8", "1", "L"),
+        },
+        "q9": {
+            "#": ("q_a", "#", "R"),
+            "1": ("q9", "#", "R"),
+        },
+        "q_a": "ACCEPTED",
+        "q_r": "REJECTED",
+    }
+
+    return states_operations[current_state][head]
