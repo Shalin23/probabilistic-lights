@@ -15,7 +15,7 @@ def main():
     subtractionTM.turing_machine("00a000000000")
     print()
 
-    print("Applying 2 × 3 using a Turing Machine")
+    print("Applying 5 × 9 using a Turing Machine")
     multiplicationTM.turing_machine("##11111*111111111#")
     print()
 
