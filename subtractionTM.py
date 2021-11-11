@@ -44,9 +44,9 @@ def turing_machine(input):
                      print(f'The result from Subtraction Turing Machine is {str(0)}')
 
 
-turing_machine("0000a0000")  # 0 (m==n)
-turing_machine("00a0000")  # -2  (m<n)
-turing_machine("00000a0000")  # 1  (m>n)
+# turing_machine("0000a0000")  # 0 (m==n)
+# turing_machine("00a0000")  # -2  (m<n)
+# turing_machine("00000a0000")  # 1  (m>n)
 
            
             

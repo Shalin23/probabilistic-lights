@@ -31,18 +31,20 @@ def turing_machine(input_str):
             current_state = operation[0]
             tape[i] = operation[1]
 
+            if current_state in default_states:
+                if current_state == "q_r":
+                    print("Unable to process INPUT")
+                    print()
+                    return
+
             if operation[2] == "R":
                 i += 1
             elif operation[2] == "L":
                 i -= 1
 
-        if current_state in default_states:
-            if current_state == "q_r":
-                print("Unable to process INPUT")
-                print()
-                return
     for i in tape:
         if i == "1":
             result += 1
 
     print(f'The Turing Machine returned {result} by multiplication')
+    # return result

@@ -111,8 +111,11 @@ def multiply(current_state, head):
             "#": ("q_a", "#", "R"),
             "1": ("q9", "#", "R"),
         },
-        "q_a": "ACCEPTED",
-        "q_r": "REJECTED",
+        "q_a": ("q_a", "ACCEPTED"),
+        "q_r": ("q_r", "REJECTED"),
     }
+
+    if head not in states_operations[current_state]:
+        return states_operations["q_r"]
 
     return states_operations[current_state][head]

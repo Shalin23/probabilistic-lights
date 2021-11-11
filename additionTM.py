@@ -22,7 +22,7 @@ def turing_machine(input):
                 i = i-1
             elif direction == "R":
                 i = i+1  # 53  54  55
-            if transitions.add(current_state, tape[i]) == None:
+            if transitions.add(current_state, tape[i]) is None:
                 print("not recognized ", i)
                 break
             else:
@@ -39,5 +39,5 @@ def turing_machine(input):
             print(f'The sum from Addition Turing Machine is {sum}')
 
 
-turing_machine("000a0000")
-turing_machine("0000a0000")
+# turing_machine("000a0000")
+# turing_machine("0000a0000")
