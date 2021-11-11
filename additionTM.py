@@ -4,17 +4,13 @@ import inputParser
 
 def turing_machine(input):
     tape = []
-    # current_tape = []  #null
     input_str = inputParser.parser(input)
     for i in range(100):
         tape.append("b")
     tape = tape[:50] + input_str + tape[50:]
-    # print(tape)
-# TuringMachine("111+11")
     i = 50
     current_state = 0
     direction = ""
-    # current_state, tape[i], direction = transitions.add(current_state,tape[i])  #x0 a 000 0
     if transitions.add(current_state, tape[i]) == -1:
         print("not recognized ", i)
     else:
@@ -43,4 +39,5 @@ def turing_machine(input):
             print(f'The sum from Addition Turing Machine is {sum}')
 
 
-# TuringMachine("000a0000")
+turing_machine("000a0000")
+turing_machine("0000a0000")
