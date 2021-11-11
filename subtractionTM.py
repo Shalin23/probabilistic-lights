@@ -4,7 +4,7 @@ import inputParser
 def turing_machine(input):
 
     tape = []
-    input_str = input_parse(input)
+    input_str = inputParser.parser(input)
 
     for i in range(100):
         tape.append("b")
@@ -16,7 +16,7 @@ def turing_machine(input):
     if transitions.subtract(current_state, tape[i]) == -1:
         print("String Rejected")
     else:
-        current_state, tape[i], direction = Transitions(current_state, tape[i])
+        current_state, tape[i], direction = transitions.subtract(current_state, tape[i])
         while current_state != 8:
 
             if direction == "L":
@@ -41,7 +41,7 @@ def turing_machine(input):
                 j += 1
             print(f'The result from Subtraction Turing Machine is {word }{sum}')
         else:
-            print(str(0))
+                     print(f'The result from Subtraction Turing Machine is {str(0)}')
 
 
 turing_machine("0000a0000")  # 0 (m==n)
