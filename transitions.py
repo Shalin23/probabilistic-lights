@@ -1,27 +1,34 @@
-def add(current_state, tape_alpha):
-    if current_state == 0:
-        if tape_alpha == "0":
-            return (1, "X", "R")
-        elif tape_alpha == "a":
-            return (4, "b", "R")
+def add(current_state, head):
+    # Dictionary of states and their transitions
+    states_operations = {
+        "q0": {
+            "#": ("q0", "#", "R"),
+            "+": ("q_a", "#", "R"),
+            "1": ("q1", "X", "R"),
+        },
+        "q1": {
+            "+": ("q2", "+", "R"),
+            "1": ("q1", "1", "R"),
+        },
+        "q2": {
+            "#": ("q3", "#", "L"),
+            "1": ("q2", "1", "R"),
+        },
+        "q3": {
+            "+": ("q4", "+", "L"),
+            "1": ("q3", "1", "L"),
+        },
+        "q4": {
+            "X": ("q5", "X", "R"),
+            "1": ("q4", "1", "L"),
+        },
+        "q_a": ("q_a", "q_a", "ACCEPTED"),
+        "q_r": ("q_r", "q_r", "REJECTED"),
+    }
+    if head not in states_operations[current_state]:
+        return states_operations["q_r"]
 
-    elif current_state == 1:
-        if tape_alpha == "0":
-            return (1, "0", "R")
-        elif tape_alpha == "a":
-            return (2, "a", "R")
-
-    elif current_state == 2:
-        if tape_alpha == "0":
-            return (2, "0", "R")
-        elif tape_alpha == "b":
-            return (3, "0", "L")
-
-    elif current_state == 3:
-        if tape_alpha == "0" or tape_alpha == "a":
-            return (3, tape_alpha, "L")  # return 0 or a
-        elif tape_alpha == "X":
-            return (0, "X", "R")
+    return states_operations[current_state][head]
 
 
 def subtract(current_state, tape_alpha):
@@ -111,8 +118,8 @@ def multiply(current_state, head):
             "#": ("q_a", "#", "R"),
             "1": ("q9", "#", "R"),
         },
-        "q_a": ("q_a", "ACCEPTED"),
-        "q_r": ("q_r", "REJECTED"),
+        "q_a": ("q_a", "q_a", "ACCEPTED"),
+        "q_r": ("q_r", "q_r", "REJECTED"),
     }
 
     if head not in states_operations[current_state]:
