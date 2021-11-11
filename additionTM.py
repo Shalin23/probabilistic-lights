@@ -1,43 +1,44 @@
 import transitions
 import inputParser
 
+default_states = ["q_a", "q_r"]
 
-def turing_machine(input):
-    tape = []
-    input_str = inputParser.parser(input)
-    for i in range(100):
-        tape.append("b")
-    tape = tape[:50] + input_str + tape[50:]
-    i = 50
-    current_state = 0
-    direction = ""
-    if transitions.add(current_state, tape[i]) == -1:
-        print("not recognized ", i)
-    else:
-        current_state, tape[i], direction = transitions.add(
-            current_state, tape[i])  # x0 a 000 0
-        while current_state != 4:
+# turing machine to read a tape and add the numbers on the tape
+def turing_machine(input_str):
+    
+    # initializing tape
+    tape = inputParser.parser(input_str) + ["#" for i in range(1000)]
 
-            if direction == "L":
-                i = i-1
-            elif direction == "R":
-                i = i+1  # 53  54  55
-            if transitions.add(current_state, tape[i]) is None:
-                print("not recognized ", i)
-                break
-            else:
-                # print("lllll:", transitions.add(current_state,tape[i]))
-                current_state, tape[i], direction = transitions.add(
-                    current_state, tape[i])
-        if current_state == 4:
-            first_zero = tape.index("0")
-            sum = 0
+    # intializing from start state
+    current_state = "q0"
 
-            while tape[first_zero] != "b":
-                first_zero += 1
-                sum += 1
-            print(f'The sum from Addition Turing Machine is {sum}')
+    result = 0
+    i = 0
 
+    # create the turing machine
+    while current_state not in default_states:
 
-# turing_machine("000a0000")
-# turing_machine("0000a0000")
+        if current_state not in default_states:
+
+            operation = transitions.add(current_state, tape[i])
+
+            current_state = operation[0]
+            tape[i] = operation[1]
+
+        if current_state in default_states:
+            if current_state == "q_r":
+                print("Unable to process INPUT")
+                print()
+                return
+        if operation[2] == "R":
+                i += 1
+        elif operation[2] == "L":
+            i -= 1
+    for i in tape:
+        if i == "1":
+            result += 1
+
+    print(f'The Turing Machine returned {result} by addition')
+
+turing_machine("0+0")
+turing_machine("111+1111")
