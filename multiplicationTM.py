@@ -14,7 +14,7 @@ def turing_machine(input_str):
     # print("States: ", states)
     # print()
 
-    tape = inputParser.parser(input_str) + ["#" for i in range(100)]
+    tape = inputParser.parser(input_str) + ["#" for i in range(1000)]
 
     current_state = states[2]
 

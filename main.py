@@ -29,6 +29,8 @@ def main():
     multiplicationTM.turing_machine("##11*111#")
     print("Applying 11 × 7 using a Turing Machine")
     multiplicationTM.turing_machine("##11111111111*1111111#")
+    print("Applying 5 × 16 using a Turing Machine")
+    multiplicationTM.turing_machine("##11111*1111111111111111#")
     print()
 
 
