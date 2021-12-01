@@ -1,10 +1,10 @@
 import transitions
-import inputParser
+import helperFunctions
 
-def turing_machine(input):
 
+def turing_machine(input_str):
     tape = []
-    input_str = inputParser.parser(input)
+    input_str = helperFunctions.parser(input_str)
 
     for i in range(100):
         tape.append("b")
@@ -23,7 +23,7 @@ def turing_machine(input):
                 i -= 1
             elif direction == "R":
                 i += 1
-            if transitions.subtract(current_state, tape[i]) == None:
+            if transitions.subtract(current_state, tape[i]) is None:
                 print("String Rejected")
                 break
             else:
@@ -39,18 +39,12 @@ def turing_machine(input):
             while tape[j] != "b":
                 sum += 1
                 j += 1
-            print(f'The result from Subtraction Turing Machine is {word }{sum}')
+            # print(f'The result from Subtraction Turing Machine is {word }{sum}')
+            return word + str(sum)
         else:
-                     print(f'The result from Subtraction Turing Machine is {str(0)}')
-
+            # print(f'The result from Subtraction Turing Machine is {str(0)}')
+            return str(0)
 
 # turing_machine("0000a0000")  # 0 (m==n)
 # turing_machine("00a0000")  # -2  (m<n)
 # turing_machine("00000a0000")  # 1  (m>n)
-
-           
-            
-
-            
-            
-            

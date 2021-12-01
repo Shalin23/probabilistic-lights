@@ -1,39 +1,14 @@
-import additionTM
-import subtractionTM
-import multiplicationTM
+import testCases
+import helperFunctions
+# import calculatorInterface
 
 
 def main():
-    print("Welcome to the Math Tutor!")
-    print()
+    # testCases.test_multiplication()
+    testCases.test_subtraction()
+    # testCases.test_addition()
 
-    print("Applying 3 + 4 using a Turing Machine")
-    additionTM.turing_machine("111+1111")
-    print("Applying 4 + 4 using a Turing Machine")
-    additionTM.turing_machine("1111+1111")
-    print("Applying 4 + 5 using a Turing Machine")
-    additionTM.turing_machine("1111+1011")
-    print()
-
-    print("Applying 2 - 9 using a Turing Machine")
-    subtractionTM.turing_machine("00a000000000")
-    print("Applying 4 - 4 using a Turing Machine")
-    subtractionTM.turing_machine("0000a0000")
-    print("Applying 2 - 4 using a Turing Machine")
-    subtractionTM.turing_machine("00a0000")
-    print("Applying 5 - 4 using a Turing Machine")
-    subtractionTM.turing_machine("00000a0000")
-    print()
-
-    print("Applying 5 × 9 using a Turing Machine")
-    multiplicationTM.turing_machine("##11111*111111111#")
-    print("Applying 2 × 3 using a Turing Machine")
-    multiplicationTM.turing_machine("##11*111#")
-    print("Applying 11 × 7 using a Turing Machine")
-    multiplicationTM.turing_machine("##11111111111*1111111#")
-    print("Applying 5 × 16 using a Turing Machine")
-    multiplicationTM.turing_machine("##11111*1111111111111111#")
-    print()
+    print(helperFunctions.postfix_converter('1+2-3*4/5-6+7/8*9/10'))
 
 
 # Press the green button in the gutter to run the script.

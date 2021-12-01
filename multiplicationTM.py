@@ -1,5 +1,5 @@
 import transitions
-import inputParser
+import helperFunctions
 
 default_states = ["q_a", "q_r"]
 
@@ -14,7 +14,7 @@ def turing_machine(input_str):
     # print("States: ", states)
     # print()
 
-    tape = inputParser.parser(input_str) + ["#" for i in range(1000)]
+    tape = helperFunctions.parser(input_str) + ["#" for i in range(1000)]
 
     current_state = states[2]
 
@@ -46,5 +46,5 @@ def turing_machine(input_str):
         if i == "1":
             result += 1
 
-    print(f'The Turing Machine returned {result} by multiplication')
-    # return result
+    # print(f'The Turing Machine returned {result} by multiplication')
+    return result

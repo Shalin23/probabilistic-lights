@@ -34,44 +34,44 @@ def add(current_state, head):
 def subtract(current_state, tape_alpha):
     if current_state == 0:
         if tape_alpha == "b":
-            return(1, "b", "R")
+            return 1, "b", "R"
     if current_state == 1:
         if tape_alpha == "0":
-            return (2, "X", "R")
+            return 2, "X", "R"
         elif tape_alpha == "a":
-            return (5, "a", "R")
+            return 5, "a", "R"
 
     elif current_state == 2:
         if tape_alpha == "0" or tape_alpha == "a":
-            return (2, tape_alpha, "R")
+            return 2, tape_alpha, "R"
         elif tape_alpha == "b":
-            return (3, tape_alpha, "L")
+            return 3, tape_alpha, "L"
 
     elif current_state == 3:
         if tape_alpha == "0":
-            return (4, "b", "L")
+            return 4, "b", "L"
         elif tape_alpha == "a":
-            return (8, "0", "R")
+            return 8, "0", "R"
 
     elif current_state == 4:
         if tape_alpha == "0" or tape_alpha == "a":
-            return (4, tape_alpha, "L")
+            return 4, tape_alpha, "L"
         elif tape_alpha == "X":
-            return (1, tape_alpha, "R")
+            return 1, tape_alpha, "R"
 
     elif current_state == 5:
         if tape_alpha == "0":
-            return (6, tape_alpha, "L")
+            return 6, tape_alpha, "L"
         if tape_alpha == "b":
-            return (8, tape_alpha, "L")
+            return 8, tape_alpha, "L"
 
     elif current_state == 6:
         if tape_alpha == "a":
-            return (8, "-", "R")
+            return 8, "-", "R"
 
     elif current_state == 7:
         if tape_alpha == "a":
-            return (8, "X", "R")
+            return 8, "X", "R"
 
 
 def multiply(current_state, head):

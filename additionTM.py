@@ -1,15 +1,15 @@
 import transitions
-import inputParser
+import helperFunctions
 
 default_states = ["q_a", "q_r"]
 
+
 # turing machine to read a tape and add the numbers on the tape
 def turing_machine(input_str):
-    
     # initializing tape
-    tape = inputParser.parser(input_str) + ["#" for i in range(1000)]
+    tape = helperFunctions.parser(input_str) + ["#" for i in range(1000)]
 
-    # intializing from start state
+    # initializing from start state
     current_state = "q0"
 
     result = 0
@@ -19,7 +19,6 @@ def turing_machine(input_str):
     while current_state not in default_states:
 
         if current_state not in default_states:
-
             operation = transitions.add(current_state, tape[i])
 
             current_state = operation[0]
@@ -31,7 +30,7 @@ def turing_machine(input_str):
                 print()
                 return
         if operation[2] == "R":
-                i += 1
+            i += 1
         elif operation[2] == "L":
             i -= 1
     for i in tape:
@@ -39,6 +38,9 @@ def turing_machine(input_str):
             result += 1
 
     print(f'The Turing Machine returned {result} by addition')
+
+    return result
+
 
 turing_machine("0+0")
 turing_machine("111+1111")
