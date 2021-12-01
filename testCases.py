@@ -1,7 +1,8 @@
-# import additionTM
+import additionTM
 import subtractionTM
 import multiplicationTM
-# import divisionTM
+import divisionTM
+
 
 def test_subtraction():
     print("Applying 2 - 9 using a Turing Machine =", subtractionTM.turing_machine("00a000000000"))
@@ -9,7 +10,7 @@ def test_subtraction():
     print("Applying 2 - 4 using a Turing Machine =", subtractionTM.turing_machine("00a0000"))
     print("Applying 5 - 4 using a Turing Machine =", subtractionTM.turing_machine("00000a0000"))
     print()
-    print(type (subtractionTM.turing_machine("00a000000000")))
+    print(type(subtractionTM.turing_machine("00a000000000")))
 
 
 def test_multiplication():
@@ -20,8 +21,9 @@ def test_multiplication():
     print()
 
 
-# def test_addition():
-#     print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("111+1111"))
-#     print("Applying 4 + 4 using a Turing Machine =", additionTM.turing_machine("1111+1111"))
-#     print("Applying 4 + 5 using a Turing Machine =", additionTM.turing_machine("1111+1011"))
-#     print()
+def test_addition():
+    print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("1+1"))
+    # print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("111+1111"))
+    # print("Applying 4 + 4 using a Turing Machine =", additionTM.turing_machine("1111+1111"))
+    # print("Applying 4 + 5 using a Turing Machine =", additionTM.turing_machine("1111+1011"))
+    print()

@@ -6,7 +6,7 @@ def parser(input_):
 
 
 def precedence(i):
-    # set precedence for arethmetic operators
+    # set precedence for arithmetic operators
     if i == '+' or i == '-':
         return 1
     elif i == '*' or i == '/':
