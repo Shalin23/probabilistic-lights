@@ -5,6 +5,7 @@ default_states = ["q_a", "q_r"]
 
 
 # turing machine to read a tape and multiply the numbers on the tape
+# the tape is read from left to right, with the denominator being on the left
 def turing_machine(input_str):
     # Define the states for the Turing Machine
     states = default_states.copy()

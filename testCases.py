@@ -1,7 +1,7 @@
 import additionTM
 import subtractionTM
 import multiplicationTM
-import divisionTM
+# import divisionTM
 
 
 def test_subtraction():
@@ -26,3 +26,10 @@ def test_addition():
     print("Applying 4 + 4 using a Turing Machine =", additionTM.turing_machine("1111+1111"))
     print("Applying 4 + 5 using a Turing Machine =", additionTM.turing_machine("1111+11111"))
     print()
+
+
+# def test_division():
+#     print("Applying 6 / 3 using a Turing Machine =", divisionTM.turing_machine("111111/111"))
+#     print("Applying 8 / 2 using a Turing Machine =", divisionTM.turing_machine("11111111/11"))
+#     print("Applying 8 / 4 using a Turing Machine =", divisionTM.turing_machine("11111111/1111"))
+#     print()
