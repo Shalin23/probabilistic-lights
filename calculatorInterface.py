@@ -21,7 +21,16 @@ def press(num):
 def equal_press():
     try:
         global expression
-        total = evaluate(postfix_converter(expression))
+        if "-" in expression:
+            equation.set(eval(expression))
+            expression = ""
+            return
+        elif "/" in expression:
+            equation.set(eval(expression))
+            expression = ""
+            return
+        else:
+            total = evaluate(postfix_converter(expression))
 
         equation.set(total)
         expression = ""
