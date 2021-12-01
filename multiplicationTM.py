@@ -23,9 +23,7 @@ def turing_machine(input_str):
 
     # create the turing machine
     while current_state not in default_states:
-
         if current_state not in default_states:
-
             operation = transitions.multiply(current_state, tape[i])
 
             current_state = operation[0]

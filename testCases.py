@@ -22,8 +22,7 @@ def test_multiplication():
 
 
 def test_addition():
-    print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("1+1"))
-    # print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("111+1111"))
-    # print("Applying 4 + 4 using a Turing Machine =", additionTM.turing_machine("1111+1111"))
-    # print("Applying 4 + 5 using a Turing Machine =", additionTM.turing_machine("1111+1011"))
+    print("Applying 3 + 4 using a Turing Machine =", additionTM.turing_machine("111+1111"))
+    print("Applying 4 + 4 using a Turing Machine =", additionTM.turing_machine("1111+1111"))
+    print("Applying 4 + 5 using a Turing Machine =", additionTM.turing_machine("1111+11111"))
     print()
