@@ -10,7 +10,7 @@ def test_subtraction():
     print("Applying 2 - 4 using a Turing Machine =", subtractionTM.turing_machine("00a0000"))
     print("Applying 5 - 4 using a Turing Machine =", subtractionTM.turing_machine("00000a0000"))
     print()
-    print(type(subtractionTM.turing_machine("00a000000000")))
+    # print(type(subtractionTM.turing_machine("00a000000000")))
 
 
 def test_multiplication():
@@ -33,3 +33,9 @@ def test_addition():
 #     print("Applying 8 / 2 using a Turing Machine =", divisionTM.turing_machine("11111111/11"))
 #     print("Applying 8 / 4 using a Turing Machine =", divisionTM.turing_machine("11111111/1111"))
 #     print()
+
+def main():
+    # test_addition()
+    test_subtraction()
+    # test_multiplication()
+    # test_division()

@@ -6,6 +6,7 @@ default_states = ["q_a", "q_r"]
 
 # turing machine to read a tape and add the numbers on the tape
 def turing_machine(input_str):
+    print(input_str)
     # Define the states for the Turing Machine
     states = default_states.copy()
     for i in range(10):

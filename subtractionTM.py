@@ -3,6 +3,7 @@ import helperFunctions
 
 
 def turing_machine(input_str):
+    print(input_str)
     tape = []
     input_str = helperFunctions.parser(input_str)
 
@@ -40,11 +41,9 @@ def turing_machine(input_str):
                 sum += 1
                 j += 1
             # print(f'The result from Subtraction Turing Machine is {word }{sum}')
-            return word + str(sum)
+            if word == "":
+                return sum
+            return sum * -1
         else:
             # print(f'The result from Subtraction Turing Machine is {str(0)}')
-            return str(0)
-
-# turing_machine("0000a0000")  # 0 (m==n)
-# turing_machine("00a0000")  # -2  (m<n)
-# turing_machine("00000a0000")  # 1  (m>n)
+            return 0

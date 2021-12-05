@@ -22,13 +22,12 @@ def precedence(i):
         return 0
 
 
-
-
 def postfix_converter(infix):
     # convert infix to postfix
+    print("Boom:", infix.split(" "))
     postfix = []
     stack = []
-    for i in infix:
+    for i in infix.split(" "):
         if i.isdigit():
             postfix.append(i)
         elif i == '(':
@@ -47,11 +46,14 @@ def postfix_converter(infix):
     return postfix
 
 
-
-
 # evaluate postfix expression
-def evaluate(postfix):
+def evaluate(infix):
+    print('infix', infix)
+    postfix = postfix_converter(infix)
+    print('postfix', postfix)
+
     stack = []
+
     for i in postfix:
         if i.isdigit():
             stack.append(int(i))
@@ -59,14 +61,14 @@ def evaluate(postfix):
             a = stack.pop()
             b = stack.pop()
             if i == '+':
-                stack.append(additionTM.turing_machine(str(1)*b + '+' + str(1)*a))
+                stack.append(additionTM.turing_machine(str(1) * b + '+' + str(1) * a))
             elif i == '-':
-                stack.append(subtractionTM.turing_machine( (b*str(1) ) + '-' + (a*str(1)) ))
+                stack.append(subtractionTM.turing_machine((b * str(0)) + 'a' + (a * str(0))))
             elif i == '*':
-                stack.append(multiplicationTM.turing_machine( (b*str(1)) + '*' + (a*str(1)) ) )
+                stack.append(multiplicationTM.turing_machine((b * str(1)) + '*' + (a * str(1))))
             elif i == '/':
-                stack.append( str(1)*b / str(1)*a)
+                stack.append(str(1) * b / str(1) * a)
             elif i == '^':
-                stack.append(str(1)*b ** str(1)*a)
+                stack.append(str(1) * b ** str(1) * a)
 
     return stack.pop()
