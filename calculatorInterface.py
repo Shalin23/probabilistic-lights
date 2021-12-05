@@ -57,7 +57,7 @@ gui.geometry("220x270")
 equation = StringVar()
 
 expression_field = Entry(gui, textvariable=equation, width=11, highlightbackground='#656565', bg="#808080")
-expression_field.grid(columnspan=22, ipadx=50, ipady=10)
+expression_field.grid(columnspan=4)
 
 button0 = Button(gui, text=' 0 ', fg='white', highlightbackground='#E6E6E6', bg='#5F308C', command=lambda: press(0), height=2, width=2)
 button0.grid(row=5, column=1)
