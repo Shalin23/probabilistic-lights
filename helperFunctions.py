@@ -24,6 +24,7 @@ def precedence(i):
 
 def postfix_converter(infix):
     # convert infix to postfix
+    print(infix)
     print("Boom:", infix.split(" "))
     postfix = []
     stack = []

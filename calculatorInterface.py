@@ -101,10 +101,10 @@ multiply.grid(row=3, column=3)
 divide = Button(gui, text=' / ', fg='black', bg='red', command=lambda: press(" / "), height=2, width=2)
 divide.grid(row=4, column=3)
 
-divide = Button(gui, text=' ( ', fg='black', bg='red', command=lambda: press(" ( "), height=2, width=2)
+divide = Button(gui, text=' ( ', fg='black', bg='red', command=lambda: press("( "), height=2, width=2)
 divide.grid(row=1, column=1)
 
-divide = Button(gui, text=' ) ', fg='black', bg='red', command=lambda: press(" ) "), height=2, width=2)
+divide = Button(gui, text=' ) ', fg='black', bg='red', command=lambda: press(" )"), height=2, width=2)
 divide.grid(row=1, column=2)
 
 equal = Button(gui, text=' = ', fg='black', bg='red', command=equal_press, height=2, width=2)
