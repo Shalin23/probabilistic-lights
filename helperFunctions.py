@@ -64,16 +64,20 @@ def evaluate(infix):
             b = stack.pop()
             if i == "+":
                 stack.append(additionTM.turing_machine(b * str(1) + "+" + a * str(1)))
+                print()
             elif i == "-":
                 stack.append(
                     subtractionTM.turing_machine((b * str(0)) + "a" + (a * str(0)))
                 )
+                print()
             elif i == "*":
                 stack.append(
                     multiplicationTM.turing_machine((b * str(1)) + "*" + (a * str(1)))
                 )
+                print()
             elif i == "/":
                 stack.append(
                     divisionTM.turing_machine(a * str(1) + "/" + b * str(1) + "Z")
                 )
+                print()
     return stack.pop()
