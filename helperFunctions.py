@@ -25,8 +25,8 @@ def precedence(i):
 
 def postfix_converter(infix):
     # convert infix to postfix
-    print(infix)
-    print("Boom:", infix.split(" "))
+    # print(infix)
+    # print("Boom:", infix.split(" "))
     postfix = []
     stack = []
     for i in infix.split(" "):
@@ -50,9 +50,9 @@ def postfix_converter(infix):
 
 # evaluate postfix expression
 def evaluate(infix):
-    print("infix", infix)
+    # print("infix", infix)
     postfix = postfix_converter(infix)
-    print("postfix", postfix)
+    # print("postfix", postfix)
 
     stack = []
 

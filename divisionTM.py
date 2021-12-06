@@ -7,7 +7,8 @@ default_states = ["q_a", "q_r"]
 # turing machine to read a tape and multiply the numbers on the tape
 # the tape is read from left to right, with the denominator being on the left
 def turing_machine(input_str):
-    print(input_str)
+    # print(input_str)
+    print(f"Calculating {input_str} using the Division Turing Machine")
     # Define the states for the Turing Machine
     states = default_states.copy()
     for i in range(11):
@@ -19,7 +20,7 @@ def turing_machine(input_str):
     tape = (
         ["#" for i in range(2)]
         + helperFunctions.parser(input_str)
-        + ["#" for i in range(1000)]
+        + ["#" for i in range(10)]  # increase range for larger computations
     )
 
     current_state = states[2]
@@ -54,7 +55,7 @@ def turing_machine(input_str):
             tape[i] = operation[1]
 
             # print("Next State: ", current_state)
-            # print("Tape: ", tape)
+            print("Tape: ", tape)
             # print()
 
             # print("Pre-operation i = ", i)

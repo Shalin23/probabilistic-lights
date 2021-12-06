@@ -3,7 +3,8 @@ import helperFunctions
 
 
 def turing_machine(input_str):
-    print(input_str)
+    # print(input_str)
+    print(f"Calculating {input_str} using the Subtraction Turing Machine")
     tape = []
     input_str = helperFunctions.parser(input_str)
 
@@ -28,7 +29,9 @@ def turing_machine(input_str):
                 print("String Rejected")
                 break
             else:
-                current_state, tape[i], direction = transitions.subtract(current_state, tape[i])
+                current_state, tape[i], direction = transitions.subtract(
+                    current_state, tape[i]
+                )
 
         if current_state == 8 and "0" in tape:
             word = ""
