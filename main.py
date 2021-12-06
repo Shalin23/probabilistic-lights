@@ -1,11 +1,11 @@
 import testCases
 import helperFunctions
 
-# import calculatorInterface
+import calculatorInterface
 
 
 def main():
-    testCases.test_division()
+    # testCases.test_division()
     # print(helperFunctions.postfix_converter('( 1 + 2 )'))
     pass
 

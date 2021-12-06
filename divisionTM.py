@@ -19,7 +19,7 @@ def turing_machine(input_str):
     tape = (
         ["#" for i in range(2)]
         + helperFunctions.parser(input_str)
-        + ["#" for i in range(10)]
+        + ["#" for i in range(1000)]
     )
 
     current_state = states[2]

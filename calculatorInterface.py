@@ -22,12 +22,12 @@ def equal_press():
     try:
         global expression
         print("expression:", expression)
-        if "/" in expression:
-            equation.set(eval(expression))
-            expression = ""
-            return
-        else:
-            total = helperFunctions.evaluate(expression)
+        # if "/" in expression:
+        #     equation.set(eval(expression))
+        #     expression = ""
+        #     return
+        # else:
+        total = helperFunctions.evaluate(expression)
 
         equation.set(total)
         expression = ""
@@ -310,17 +310,6 @@ blank1 = Button(
     font="'sans 8 bold",
 )
 blank1.grid(row=5, column=0)
-
-# blank2 = Button(
-#     gui,
-#     text="",
-#     fg="#EF476F",
-#     bg="#063341",
-#     height=2,
-#     width=4, activebackground="#EF476F",
-#     font="'sans 8 bold",
-# )
-# blank2.grid(row=5, column=3)
 
 # start the GUI
 gui.mainloop()

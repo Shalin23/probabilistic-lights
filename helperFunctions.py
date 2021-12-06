@@ -1,6 +1,7 @@
 import additionTM
 import multiplicationTM
 import subtractionTM
+import divisionTM
 
 
 def parser(input_):
@@ -62,7 +63,7 @@ def evaluate(infix):
             a = stack.pop()
             b = stack.pop()
             if i == "+":
-                stack.append(additionTM.turing_machine(str(1) * b + "+" + str(1) * a))
+                stack.append(additionTM.turing_machine(b * str(1) + "+" + a * str(1)))
             elif i == "-":
                 stack.append(
                     subtractionTM.turing_machine((b * str(0)) + "a" + (a * str(0)))
@@ -72,5 +73,7 @@ def evaluate(infix):
                     multiplicationTM.turing_machine((b * str(1)) + "*" + (a * str(1)))
                 )
             elif i == "/":
-                stack.append(str(1) * a / str(1) * b + "Z")
+                stack.append(
+                    divisionTM.turing_machine(a * str(1) + "/" + b * str(1) + "Z")
+                )
     return stack.pop()
