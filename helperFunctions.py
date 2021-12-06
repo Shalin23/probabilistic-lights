@@ -12,11 +12,11 @@ def parser(input_):
 
 def precedence(i):
     # set precedence for arithmetic operators
-    if i == '+' or i == '-':
+    if i == "+" or i == "-":
         return 1
-    elif i == '*' or i == '/':
+    elif i == "*" or i == "/":
         return 2
-    elif i == '^':
+    elif i == "^":
         return 3
     else:
         return 0
@@ -31,10 +31,10 @@ def postfix_converter(infix):
     for i in infix.split(" "):
         if i.isdigit():
             postfix.append(i)
-        elif i == '(':
+        elif i == "(":
             stack.append(i)
-        elif i == ')':
-            while stack[-1] != '(':
+        elif i == ")":
+            while stack[-1] != "(":
                 postfix.append(stack.pop())
             stack.pop()
         else:
@@ -49,9 +49,9 @@ def postfix_converter(infix):
 
 # evaluate postfix expression
 def evaluate(infix):
-    print('infix', infix)
+    print("infix", infix)
     postfix = postfix_converter(infix)
-    print('postfix', postfix)
+    print("postfix", postfix)
 
     stack = []
 
@@ -61,15 +61,16 @@ def evaluate(infix):
         else:
             a = stack.pop()
             b = stack.pop()
-            if i == '+':
-                stack.append(additionTM.turing_machine(str(1) * b + '+' + str(1) * a))
-            elif i == '-':
-                stack.append(subtractionTM.turing_machine((b * str(0)) + 'a' + (a * str(0))))
-            elif i == '*':
-                stack.append(multiplicationTM.turing_machine((b * str(1)) + '*' + (a * str(1))))
-            elif i == '/':
-                stack.append(str(1) * b / str(1) * a)
-            elif i == '^':
-                stack.append(str(1) * b ** str(1) * a)
-
+            if i == "+":
+                stack.append(additionTM.turing_machine(str(1) * b + "+" + str(1) * a))
+            elif i == "-":
+                stack.append(
+                    subtractionTM.turing_machine((b * str(0)) + "a" + (a * str(0)))
+                )
+            elif i == "*":
+                stack.append(
+                    multiplicationTM.turing_machine((b * str(1)) + "*" + (a * str(1)))
+                )
+            elif i == "/":
+                stack.append(str(1) * a / str(1) * b + "Z")
     return stack.pop()
