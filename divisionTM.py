@@ -30,7 +30,7 @@ def turing_machine(input_str):
 
     # create the turing machine
     while current_state not in default_states:
-        steps += 1
+        # steps += 1
         # print("Step: ", steps)
         # print("***** Pre-operation i = ", i)
         # print()
