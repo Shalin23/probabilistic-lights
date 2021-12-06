@@ -24,40 +24,40 @@ def turing_machine(input_str):
 
     current_state = states[2]
 
-    steps = 0
+    # steps = 0
     result = 0
     i = 0
 
     # create the turing machine
     while current_state not in default_states:
         steps += 1
-        print("Step: ", steps)
-        print("***** Pre-operation i = ", i)
-        print()
+        # print("Step: ", steps)
+        # print("***** Pre-operation i = ", i)
+        # print()
 
-        print("Current State: ", current_state)
-        print(current_state in default_states)
-        print()
+        # print("Current State: ", current_state)
+        # print(current_state in default_states)
+        # print()
 
         if current_state not in default_states:
-            print("--------------------")
-            print("Current State: ", current_state)
-            print("Current Head: ", tape[i])
-            print("--------------------")
-            print()
+            # print("--------------------")
+            # print("Current State: ", current_state)
+            # print("Current Head: ", tape[i])
+            # print("--------------------")
+            # print()
 
             operation = transitions.divide(current_state, tape[i])
-            print(">>>Operation: ", operation)
-            print()
+            # print(">>>Operation: ", operation)
+            # print()
 
             current_state = operation[0]
             tape[i] = operation[1]
 
-            print("Next State: ", current_state)
-            print("Tape: ", tape)
-            print()
+            # print("Next State: ", current_state)
+            # print("Tape: ", tape)
+            # print()
 
-            print("Pre-operation i = ", i)
+            # print("Pre-operation i = ", i)
 
             if current_state in default_states:
                 if current_state == "q_r":
@@ -72,9 +72,9 @@ def turing_machine(input_str):
                 # print("Move left")
                 i -= 1
 
-            print("Post-operation i = ", i)
-            print("------------------------------------------------------------")
-            print()
+            # print("Post-operation i = ", i)
+            # print("------------------------------------------------------------")
+            # print()
 
     for i in tape:
         if i == "1":
